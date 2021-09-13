@@ -32,6 +32,9 @@ export default {
   },
   components: {},
   computed: {},
+  created() {
+    console.log(coach.areas);
+  },
   methods: {
     classArea(area) {
       switch (area) {

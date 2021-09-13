@@ -32,6 +32,9 @@ export default {
   },
   components: {},
   computed: {},
+  created() {
+    coach.areas;
+  },
   methods: {
     classArea(area) {
       switch (area) {

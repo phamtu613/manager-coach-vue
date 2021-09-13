@@ -29,14 +29,15 @@ export default {
   computed: {
     filterCoaches() {
       return this.$store.state.coaches.filter((item) => {
-        if (Array.isArray(item.areas)) {
-          for (let i = 0; i < item.areas.length; i++) {
-            if (this.$store.state.filterOption.indexOf(item.areas[i]) != -1) {
-              return true;
-            }
-          }
-        }
+        // if (Array.isArray(item.areas)) {
+        //   for (let i = 0; i < item.areas.length; i++) {
+        //     if (this.$store.state.filterOption.indexOf(item.areas[i]) != -1) {
+        //       return true;
+        //     }
+        //   }
+        // }
         if (typeof item.areas === "string") {
+          console.log(item.areas);
           return (
             this.$store.state.filterOption.indexOf(item.areas.toLowerCase()) !=
             -1

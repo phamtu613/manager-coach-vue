@@ -36,11 +36,8 @@ export default {
             }
           }
         }
-        if (typeof item.areas === "string") {
-          return (
-            this.$store.state.filterOption.indexOf(item.areas.toLowerCase()) !=
-            -1
-          );
+        if (typeof Array.isArray(item.areas) === "string") {
+          return this.$store.state.filterOption.indexOf(item.areas) != -1;
         }
         return false;
       });

@@ -7,15 +7,12 @@
       </h4>
       <p>{{ coach.hourlyRate }} $/hour</p>
       <div class="coach-area">
-        <template v-if="Array.isArray(coach.areas)">
-          <span
-            :class="classArea(area)"
-            v-for="(area, index) in coach.areas"
-            :key="index"
-            >{{ area }}</span
-          >
-        </template>
-        <span v-else>{{ coach.areas }}</span>
+        <span
+          :class="classArea(area)"
+          v-for="(area, index) in coach.areas"
+          :key="index"
+          >{{ area }}</span
+        >
       </div>
     </div>
   </div>

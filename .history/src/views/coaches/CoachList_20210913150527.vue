@@ -37,6 +37,7 @@ export default {
           }
         }
         if (typeof item.areas === "string") {
+          console.log(item.areas);
           return (
             this.$store.state.filterOption.indexOf(item.areas.toLowerCase()) !=
             -1

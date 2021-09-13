@@ -17,7 +17,9 @@ import CoachItem from "../../components/coaches/CoachItem.vue";
 import CoachFilter from "../../components/coaches/CoachFilter.vue";
 export default {
   data() {
-    return {};
+    return {
+      coaches: [],
+    };
   },
   components: {
     CoachItem,
@@ -29,18 +31,19 @@ export default {
   computed: {
     filterCoaches() {
       return this.$store.state.coaches.filter((item) => {
+        console.log("Array");
+
         if (Array.isArray(item.areas)) {
           for (let i = 0; i < item.areas.length; i++) {
             if (this.$store.state.filterOption.indexOf(item.areas[i]) != -1) {
               return true;
             }
           }
-        }
-        if (typeof item.areas === "string") {
-          return (
-            this.$store.state.filterOption.indexOf(item.areas.toLowerCase()) !=
-            -1
-          );
+        } else {
+          if (this.$store.state.filterOption.indexOf(item.areas) != -1) {
+            console.log("okeeee");
+            return true;
+          }
         }
         return false;
       });
